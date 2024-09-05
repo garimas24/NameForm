@@ -16,6 +16,7 @@ function DisplayName() {
 
   return (
     <div>
+      <h2>Full Name Display</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First Name:</label>
         <input
@@ -39,21 +40,21 @@ function DisplayName() {
         {/* <br /> */}
         <button type="submit">Submit</button>
       </form>
-      {/* <div id="fullName"> */}
-      {/* <p>Full Name:</p> */}
-      {/* {fullName ? <p>{fullName}</p> : <p>No name entered yet.</p>} */}
-      {/* {fullName ? (
+      <div id="fullName">
+        {/* <p>Full Name:</p> */}
+        {/* {fullName ? <p>{fullName}</p> : <p>No name entered yet.</p>} */}
+        {/* {fullName ? (
           <p>Full Name: {fullName}</p>
         ) : (
           <p>Full Name: No name entered yet.</p>
         )} */}
-      {fullName && (
-        <div>
-          <p>Full Name: {fullName}</p>
-        </div>
-      )}
+        {fullName && (
+          <div>
+            <p>Full Name: {fullName}</p>
+          </div>
+        )}
+      </div>
     </div>
-    // </div>
   );
 }
 
