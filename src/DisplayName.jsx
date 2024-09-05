@@ -4,6 +4,7 @@ function DisplayName() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [fullName, setFullName] = useState("");
+  //   const [errorMessage, setErrorMessage] = useState("");
 
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
@@ -15,17 +16,18 @@ function DisplayName() {
   //   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    // setErrorMessage("");
     if (!firstName || !lastName) {
       alert("Please fill out both fields.");
       setFullName(""); // Clear fullName if the form is incomplete
       return;
     }
-    setFullName(`${firstName} ${lastName}`);
+    // setFullName(`${firstName} ${lastName}`);
+    setFullName(`${firstName.trim()} ${lastName.trim()}`);
   };
 
   return (
     <div>
-      {/* <h2>Full Name Display</h2> */}
       <div id="fullNameDisplay">
         <h2>Full Name Display</h2>
         <form onSubmit={handleSubmit}>
@@ -51,10 +53,14 @@ function DisplayName() {
           {/* <br /> */}
           <button type="submit">Submit</button>
         </form>
-        {fullName ? <p>Full Name: {fullName}</p> : <p>Full Name: </p>}
+
+        {fullName && (
+          <div>
+            <p>Full Name: {fullName}</p>
+          </div>
+        )}
       </div>
     </div>
-    // </div>
   );
 }
 
