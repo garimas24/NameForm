@@ -39,12 +39,15 @@ function DisplayName() {
         {/* <br /> */}
         <button type="submit">Submit</button>
       </form>
-
-      {fullName && (
-        <div>
-          <h2>Full Name: {fullName}</h2>
-        </div>
-      )}
+      <div id="fullName">
+        {/* <p>Full Name:</p> */}
+        {/* {fullName ? <p>{fullName}</p> : <p>No name entered yet.</p>} */}
+        {fullName ? (
+          <p>Full Name: {fullName}</p>
+        ) : (
+          <p>Full Name: No name entered yet.</p>
+        )}
+      </div>
     </div>
   );
 }
